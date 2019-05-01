@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "MyGame.h"
+#include "GridFloor.h"
+#include "DebugCamera.h"
 
 // コンストラクタ
 MyGame::MyGame(int width, int height) : m_width(width), m_height(height), Game(width, height)

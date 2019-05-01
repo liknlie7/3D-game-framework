@@ -40,6 +40,12 @@
     <ClInclude Include="DirectX11.h">
       <Filter>Framework Header</Filter>
     </ClInclude>
+    <ClInclude Include="GridFloor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugCamera.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -56,6 +62,12 @@
     </ClCompile>
     <ClCompile Include="DirectX11.cpp">
       <Filter>Framework Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugCamera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridFloor.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

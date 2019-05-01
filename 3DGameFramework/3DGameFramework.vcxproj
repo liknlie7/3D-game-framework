@@ -169,16 +169,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DebugCamera.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DirectX11.h" />
+    <ClInclude Include="GridFloor.h" />
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="StepTimer.h" />
     <ClInclude Include="NonCopyable.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DebugCamera.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="DirectX11.cpp" />
+    <ClCompile Include="GridFloor.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Window.cpp" />
