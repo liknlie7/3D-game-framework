@@ -38,7 +38,8 @@ void MyGame::CreateResources()
 {
 	// 基底クラスのCreateResourcesを呼び出す
 	Game::CreateResources();
-
+	// グリッドの床の作成
+	m_gridFloor = std::make_unique<GridFloor>(m_directX.GetDevice().Get(), m_directX.GetContext().Get(), m_commonStates.get(), 10.0f, 10);
 	// ビュー座標変換行列を生成する
 	// 視点, 注視点, 
 	m_view = DirectX::SimpleMath::Matrix::CreateLookAt(DirectX::SimpleMath::Vector3(2.0f, 2.0f, 2.0f),
@@ -93,6 +94,8 @@ void MyGame::Render(const DX::StepTimer& timer)
 
 	// バッファをクリアする
 	Clear();
+	// グリッドの床を描画する
+	m_gridFloor->Render(m_directX.GetContext().Get(), m_view, m_projection);
 	// スプライトバッチを開始する
 	GetSpriteBatch()->Begin(DirectX::SpriteSortMode_Deferred, m_commonStates->NonPremultiplied());
 	// FPSを描画する
