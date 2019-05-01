@@ -40,15 +40,6 @@
     <ClInclude Include="DirectX11.h">
       <Filter>Framework Header</Filter>
     </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Direct3D.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectXTK.h">
-      <Filter>Header</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -65,15 +56,6 @@
     </ClCompile>
     <ClCompile Include="DirectX11.cpp">
       <Filter>Framework Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Direct3D.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectXTK.cpp">
-      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
