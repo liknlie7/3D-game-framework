@@ -46,7 +46,7 @@ void MyGame::CreateResources()
 		DirectX::SimpleMath::Vector3::Zero, DirectX::SimpleMath::Vector3::Up);
 	// 射影座標変換行列を生成する
 	m_projection = DirectX::SimpleMath::Matrix::CreatePerspectiveFieldOfView(DirectX::XM_PI / 4.0f,
-		float(m_width) / float(m_height), 0.1f, 10.0f);
+		float(m_width) / float(m_height), 0.1f, 100.0f);
 	// エフェクトを更新する
 	m_model->UpdateEffects([](DirectX::IEffect* effect)
 		{
@@ -66,8 +66,8 @@ void MyGame::CreateResources()
 			{
 				fog->SetFogEnabled(true);
 				fog->SetFogColor(DirectX::Colors::CornflowerBlue);
-				fog->SetFogStart(3.f);
-				fog->SetFogEnd(4.f);
+				fog->SetFogStart(30.f);
+				fog->SetFogEnd(40.f);
 			}
 		});
 }
@@ -77,6 +77,8 @@ void MyGame::Update(const DX::StepTimer& timer)
 {
 	// 経過時間を取得する
 	float elapsedTime = float(timer.GetTotalSeconds());
+
+	m_debugCamera->Update();
 }
 
 // ゲームを描画する
@@ -91,6 +93,8 @@ void MyGame::Render(const DX::StepTimer& timer)
 
 	// Z軸に対して回転させる行列を生成する
 	m_world = DirectX::SimpleMath::Matrix::CreateRotationZ(cosf(time) * 1.0f);
+	// ビュー行列を作成する
+	m_view = m_debugCamera->GetCameraMatrix();
 
 	// バッファをクリアする
 	Clear();
