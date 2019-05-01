@@ -4,6 +4,10 @@
 
 #include "Window.h"
 #include "Game.h"
+#include <Mouse.h>
+#include <Keyboard.h>
+#include "GridFloor.h"
+#include "DebugCamera.h"
 
 class MyGame : public Game 
 {
@@ -44,7 +48,14 @@ private:
 	std::unique_ptr <DirectX::CommonStates> m_commonStates;
 	// モデル
 	std::unique_ptr<DirectX::Model> m_model;
-
+	// キーボード
+	std::unique_ptr<DirectX::Keyboard> m_keyboard;
+	// マウス
+	std::unique_ptr<DirectX::Mouse> m_mouse;
+	// デバッグカメラ
+	std::unique_ptr<DebugCamera> m_debugCamera;
+	// グリッドフロア
+	std::unique_ptr<GridFloor> m_gridFloor;
 	// DirectX11クラスのインスタンスを取得する
 	DirectX11& m_directX = DirectX11::Get();
 };

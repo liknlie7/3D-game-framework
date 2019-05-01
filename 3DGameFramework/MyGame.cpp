@@ -1,8 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "MyGame.h"
-#include "GridFloor.h"
-#include "DebugCamera.h"
 
 // コンストラクタ
 MyGame::MyGame(int width, int height) : m_width(width), m_height(height), Game(width, height)
@@ -14,6 +12,16 @@ void MyGame::Initialize(int width, int height)
 {
 	// 基底クラスのInitializeを呼び出す 
 	Game::Initialize(width, height);
+
+	// キーボードを生成する
+	m_keyboard = std::make_unique<DirectX::Keyboard>();
+
+	// マウスを生成する
+	m_mouse = std::make_unique<DirectX::Mouse>();
+	//m_mouse->SetWindow(window);
+
+	// デバッグカメラを生成する
+	m_debugCamera = std::make_unique<DebugCamera>(width, height);
 
 	// CommonStatesオブジェクトを生成する
 	m_commonStates = std::make_unique<DirectX::CommonStates>(m_directX.GetDevice().Get());
